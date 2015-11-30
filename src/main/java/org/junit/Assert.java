@@ -22,6 +22,14 @@ import org.junit.internal.InexactComparisonCriteria;
  * @since 4.0
  */
 public class Assert {
+    
+    public <T> int assertGreaterThan(T o1, T o2, java.util.Comparator<T> comparator){
+        int sol = comparator.compare(o1, o2);
+        
+        return sol;
+        
+    }
+    
     /**
      * Protect constructor since it is a static only class
      */

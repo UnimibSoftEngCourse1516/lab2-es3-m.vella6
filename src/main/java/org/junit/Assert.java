@@ -24,10 +24,10 @@ import org.junit.internal.InexactComparisonCriteria;
 public class Assert {
     
     public <T> int assertGreaterThan(T o1, T o2, java.util.Comparator<T> comparator){
-        int sol = comparator.compare(o1, o2);
-        
-        return sol;
-        
+       
+        int output = comparator.compare(o1, o2);
+        return output;
+    
     }
     
     /**

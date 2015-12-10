@@ -16,45 +16,6 @@ public class AssertTest extends TestCase {
       * because fail() would never be reported.
       */
     
-  //NullPointerException - if an argument is null and this comparator does not permit null arguments
-    //ClassCastException - if the arguments' types prevent them from being compared by this comparator(VEDERE SE IMPLEMENTARE)
-    
-    public <T> void assertGreaterThanTest1(T o1, T o2, java.util.Comparator<T> comparator) throws NullPointerException, ClassCastException{
-       
-        try {
-            comparator.compare(null, o2);
-            fail("eccezione non lanciata");
-        } catch (NullPointerException e){
-            //eccezione lanciata
-            assertTrue(true);
-        }
-        
-    }
-    
-    public <T> void assertGreaterThanTest2(T o1, T o2, java.util.Comparator<T> comparator) throws NullPointerException, ClassCastException{
-        
-        try {
-            comparator.compare(o1, null);
-            fail("eccezione non lanciata");
-        } catch (NullPointerException e){
-            //eccezione lanciata
-            assertTrue(true);
-        }
-        
-    }
-    
-    public <T> void assertGreaterThanTest3(T o1, T o2, java.util.Comparator<T> comparator) throws NullPointerException, ClassCastException{
-        
-        try {
-            comparator.compare(null, null);
-            fail("eccezione non lanciata");
-        } catch (NullPointerException e){
-            //eccezione lanciata
-            assertTrue(true);
-        }
-        
-    }
-    
     public void testFail() {
         // Also, we are testing fail, so we can't rely on fail() working.
         // We have to throw the exception manually.

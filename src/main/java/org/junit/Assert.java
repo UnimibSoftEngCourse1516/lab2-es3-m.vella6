@@ -23,11 +23,9 @@ import org.junit.internal.InexactComparisonCriteria;
  */
 public class Assert {
     
-    public <T> int assertGreaterThan(T o1, T o2, java.util.Comparator<T> comparator){
-       
-        int output = comparator.compare(o1, o2);
-        return output;
-    
+   public static <T> void assertGreaterThan(T o1, T o2, java.util.Comparator<T> comparator){
+        if(comparator.compare(o1, o2) !=1)
+            fail(null);        
     }
     
     /**

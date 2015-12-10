@@ -33,7 +33,14 @@ public class AssertionTest {
 // @Test (expected=AssertionError.class) public void error() {
 //      assert false;
 //  }
-
+    
+    public void testAssertGreaterThan(){
+        Integer o1 = new Integer(3);
+        Integer o2 = new Integer(2);
+        C1 c = new C1();
+        Assert.assertGreaterThan(o1, o2, c);
+    }
+    
     @Test(expected = AssertionError.class)
     public void fails() {
         Assert.fail();

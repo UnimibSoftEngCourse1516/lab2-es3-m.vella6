@@ -41,6 +41,13 @@ public class AssertionTest {
         Assert.assertGreaterThan(o1, o2, c);
     }
     
+       @Test 
+    public void assertThanGreaterPrimitiveTest() {
+        
+            Assert.assertGreaterThanPrimitive(4, 2);
+       
+     }
+     
     @Test(expected = AssertionError.class)
     public void fails() {
         Assert.fail();

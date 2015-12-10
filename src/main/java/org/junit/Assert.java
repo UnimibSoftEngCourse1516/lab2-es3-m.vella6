@@ -1,5 +1,7 @@
 package org.junit;
 
+import java.util.Arrays;
+
 import org.hamcrest.Matcher;
 import org.hamcrest.MatcherAssert;
 import org.junit.internal.ArrayComparisonFailure;
@@ -34,8 +36,117 @@ public class Assert {
     protected Assert() {
     }
     
-    //adding assertgreaterthan with primitive, only int,double, boolean,char ,String
+    public static String assertGreaterThanPrimitive(Object o1, Object o2){
+        String output = "";
+                   
+     //contronto tra short
+     if (o1 instanceof Short && o2 instanceof Short ) {
+         System.out.println("oggetti di tipo short.");
+         short h1 = (Short) o1;
+         short h2 = (Short) o2;
+            
+         if (h1 < h2) 
+             output = "il più grande è " + h2;
+         else if (h1> h2)
+             output = "il più grande è " + h1;
+         else 
+             output = "numeri uguali";
 
+        }
+        
+        // confronto tra long
+     else if (o1 instanceof Long && o2 instanceof Long ) {
+         System.out.println("oggetti di tipo long.");
+          long l1 = (Long) o1;
+          long l2 = (Long) o2;
+            
+          output = Math.max(l1, l2) + "";
+
+        }
+        
+        //contronto tra interi
+        else if (o1 instanceof Integer && o2 instanceof Integer ) {
+            System.out.println("oggetti di tipo int.");
+            int n1 = (Integer) o1;
+            int n2 = (Integer) o2;
+            
+            output = Math.max(n1, n2) + "";
+
+        }
+        
+     //contronto tra float     
+        else if (o1 instanceof Float && o2 instanceof Float ) {
+            System.out.println("oggetti di tipo float.");
+         float f1 = (Float) o1;
+         float f2 = (Float) o2;
+            
+            output = Math.max(f1, f2) + "";
+         }
+        
+      //contronto tra double
+         else if (o1 instanceof Double && o2 instanceof Double ) {
+             System.out.println("oggetti di tipo double.");
+            double d1 = (Double) o1;
+            double d2 = (Double) o2;
+            
+            output = Math.max(d1, d2) + "";
+         }
+        
+     
+      //contronto tra boolean. tra due boolean il più grande è quello con valore 1 = true
+         else if (o1 instanceof Boolean && o2 instanceof Boolean){
+             System.out.println("oggetti di tipo boolean.");
+             boolean b1 = (Boolean) o1;
+             boolean b2 = (Boolean) o2;
+             
+             if (b2 == true && b1 == false)
+                 output = "il più grande è il secondo valore";
+             else if (b1 == true && b2 == false)
+                 output = "il più grande è il primo valore" ;
+             else 
+                 output = "i due valori sono uguali";
+             }
+        
+      //contronto tra char
+         else if (o1 instanceof Character && o2 instanceof Character){
+             System.out.println("oggetti di tipo char.");
+             char c1 = (Character) o1;
+             char c2 = (Character) o2;
+             
+             char arr[]= {c1, c2};
+             
+             // per maggiore si intende "viene prima" rispetto all'ordine lessicografico. 
+             //vedi tabella unicode
+             
+             Arrays.sort(arr);
+             output = "il più grande (in ordine lessicografico) è " + arr[1];
+         
+         }
+        
+        //confronto tra stringhe
+         else if (o1 instanceof String && o2 instanceof String){
+             System.out.println("oggetti di tipo string.");
+             String s1 = (String) o1;
+             String s2 = (String) o2;
+             
+             // per maggiore si intende la stringa più lunga
+             
+             int lung1 = s1.length();
+             int lung2 = s2.length();
+             
+             if (lung1 > lung2)
+                 output = "la stringa più lunga è " + s1 ; 
+             else if (lung2 < lung1)
+                 output = "la stringa più lunga è " + s2 ;
+             else
+                 output = "stringhe di lunghezza uguale";
+         }
+        
+         else
+             output = "oggetti di tipo diverso.";
+        
+         return output;
+     }
     
     
     /**

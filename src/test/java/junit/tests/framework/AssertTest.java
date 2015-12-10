@@ -15,6 +15,7 @@ public class AssertTest extends TestCase {
       *     }
       * because fail() would never be reported.
       */
+    
     public void testFail() {
         // Also, we are testing fail, so we can't rely on fail() working.
         // We have to throw the exception manually.

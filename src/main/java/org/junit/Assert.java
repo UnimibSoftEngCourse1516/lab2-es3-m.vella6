@@ -43,9 +43,9 @@ public class Assert {
      */
     
     
-    public String assertGreaterThanPrimitive(Object o1, Object o2){
+    public static String assertGreaterThanPrimitive(Object o1, Object o2){
         String output = "";
-             
+                   
      //contronto tra short
      if (o1 instanceof Short && o2 instanceof Short ) {
          System.out.println("oggetti di tipo short.");
@@ -78,7 +78,10 @@ public class Assert {
             int n2 = (Integer) o2;
             
             output = Math.max(n1, n2) + "";
-
+            if (n1 <= n2)
+                fail();
+            else
+                assert(true);
         }
         
      //contronto tra float     
